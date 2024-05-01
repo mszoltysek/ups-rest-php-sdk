@@ -50,11 +50,12 @@ class LabelRecoveryResponseNormalizer implements DenormalizerInterface, Normaliz
             unset($data['ShipmentIdentificationNumber']);
         }
         if (\array_key_exists('LabelResults', $data)) {
-            $values = array();
-            foreach ($data['LabelResults'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults', 'json', $context);
-            }
-            $object->setLabelResults($values);
+            // $values = array();
+            // foreach ($data['LabelResults'] as $value) {
+            //     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults', 'json', $context);
+            // }
+            // $object->setLabelResults($values);
+            $object->setLabelResults($this->denormalizer->denormalize($data['LabelResults'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults', 'json', $context));
             unset($data['LabelResults']);
         }
         if (\array_key_exists('CODTurnInPage', $data)) {
