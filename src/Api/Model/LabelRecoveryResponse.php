@@ -27,7 +27,7 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @var LabelRecoveryResponseLabelResults[]
+     * @var LabelRecoveryResponseLabelResults
      */
     protected $labelResults;
     /**
@@ -101,20 +101,20 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @return LabelRecoveryResponseLabelResults[]
+     * @return LabelRecoveryResponseLabelResults
      */
-    public function getLabelResults() : array
+    public function getLabelResults() : LabelRecoveryResponseLabelResults
     {
         return $this->labelResults;
     }
     /**
      * 
      *
-     * @param LabelRecoveryResponseLabelResults[] $labelResults
+     * @param LabelRecoveryResponseLabelResults $labelResults
      *
      * @return self
      */
-    public function setLabelResults(array $labelResults) : self
+    public function setLabelResults(LabelRecoveryResponseLabelResults $labelResults) : self
     {
         $this->initialized['labelResults'] = true;
         $this->labelResults = $labelResults;
