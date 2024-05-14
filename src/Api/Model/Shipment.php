@@ -63,7 +63,7 @@ class Shipment extends \ArrayObject
      *
      * @return Package[]
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
