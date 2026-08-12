@@ -29,7 +29,7 @@ class GenerateTokenSuccessResponseNormalizer implements DenormalizerInterface, N
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -111,7 +111,7 @@ class GenerateTokenSuccessResponseNormalizer implements DenormalizerInterface, N
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
         $data = array();
         if ($object->isInitialized('refreshTokenExpiresIn') && null !== $object->getRefreshTokenExpiresIn()) {

@@ -11,7 +11,7 @@ class DropLocationAdditionalCommentsNormalizer extends BaseNormalizer
     /**
      * @inheritDoc
      */
-    public function denormalize($data, $class, $format = null, array $context = [])
+    public function denormalize(mixed $data, string $class, ?string $format = null, array $context = []): mixed
     {
         if ($data === null || is_array($data) === false) {
             return parent::denormalize($data, $class, $format, $context);
